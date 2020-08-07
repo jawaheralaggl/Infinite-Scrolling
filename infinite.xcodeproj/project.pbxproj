@@ -13,6 +13,8 @@
 		A553E6C924DCCBD400C4F6DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A553E6C724DCCBD400C4F6DA /* Main.storyboard */; };
 		A553E6CB24DCCBD900C4F6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A553E6CA24DCCBD900C4F6DA /* Assets.xcassets */; };
 		A553E6CE24DCCBD900C4F6DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A553E6CC24DCCBD900C4F6DA /* LaunchScreen.storyboard */; };
+		A553E6D724DCCD1900C4F6DA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A553E6D524DCCD1900C4F6DA /* CollectionViewCell.swift */; };
+		A553E6D824DCCD1900C4F6DA /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A553E6D624DCCD1900C4F6DA /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		A553E6CA24DCCBD900C4F6DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A553E6CD24DCCBD900C4F6DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A553E6CF24DCCBD900C4F6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A553E6D524DCCD1900C4F6DA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		A553E6D624DCCD1900C4F6DA /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				A553E6C124DCCBD400C4F6DA /* AppDelegate.swift */,
 				A553E6C324DCCBD400C4F6DA /* SceneDelegate.swift */,
 				A553E6C524DCCBD400C4F6DA /* ViewController.swift */,
+				A553E6D524DCCD1900C4F6DA /* CollectionViewCell.swift */,
+				A553E6D624DCCD1900C4F6DA /* CollectionViewCell.xib */,
 				A553E6C724DCCBD400C4F6DA /* Main.storyboard */,
 				A553E6CA24DCCBD900C4F6DA /* Assets.xcassets */,
 				A553E6CC24DCCBD900C4F6DA /* LaunchScreen.storyboard */,
@@ -127,6 +133,7 @@
 			files = (
 				A553E6CE24DCCBD900C4F6DA /* LaunchScreen.storyboard in Resources */,
 				A553E6CB24DCCBD900C4F6DA /* Assets.xcassets in Resources */,
+				A553E6D824DCCD1900C4F6DA /* CollectionViewCell.xib in Resources */,
 				A553E6C924DCCBD400C4F6DA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +147,7 @@
 			files = (
 				A553E6C624DCCBD400C4F6DA /* ViewController.swift in Sources */,
 				A553E6C224DCCBD400C4F6DA /* AppDelegate.swift in Sources */,
+				A553E6D724DCCD1900C4F6DA /* CollectionViewCell.swift in Sources */,
 				A553E6C424DCCBD400C4F6DA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +295,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6W4MA25Y33;
 				INFOPLIST_FILE = infinite/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +314,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6W4MA25Y33;
 				INFOPLIST_FILE = infinite/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
