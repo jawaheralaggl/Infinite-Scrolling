@@ -14,11 +14,9 @@ class ViewController: UIViewController {
     
     let imageCollection: [UIImage] = [#imageLiteral(resourceName: "1"), #imageLiteral(resourceName: "2"), #imageLiteral(resourceName: "3")]
     private var numberOfItem: Int = 1000
-    var counter = 0
-    var timer = Timer()
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var pageView: UIPageControl!
     
     
     override func viewDidLoad() {
@@ -33,29 +31,6 @@ class ViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        pageView.numberOfPages = imageCollection.count
-        pageView.currentPage = 0
-        
-        DispatchQueue.main.async {
-            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
-        }
-    }
-    
-    
-    @objc func changeImage() {
-        if counter < imageCollection.count {
-            let index = IndexPath.init(item: counter, section: 0)
-            self.collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
-            pageView.currentPage = counter
-            counter += 1
-        }else {
-            counter = 0
-            let index = IndexPath.init(item: counter, section: 0)
-            self.collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: false)
-            pageView.currentPage = counter
-            counter = 1
-        }
     }
     
 }
@@ -103,7 +78,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         var offset = collectionView.contentOffset

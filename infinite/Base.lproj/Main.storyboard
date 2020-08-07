@@ -40,28 +40,17 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="qc8-rY-lXO">
-                                <rect key="frame" x="155" y="244" width="104" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="104" id="3oj-3b-WqB"/>
-                                    <constraint firstAttribute="height" constant="37" id="iqH-6D-nfY"/>
-                                </constraints>
-                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bYW-Cb-zWj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3OX-Hf-55j"/>
                             <constraint firstItem="bYW-Cb-zWj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4x5-27-Zsu"/>
-                            <constraint firstItem="qc8-rY-lXO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="155" id="CjZ-PV-Vig"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qc8-rY-lXO" secondAttribute="trailing" constant="155" id="KTQ-Fw-0mB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bYW-Cb-zWj" secondAttribute="trailing" id="Rjs-ox-yhX"/>
-                            <constraint firstItem="qc8-rY-lXO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="VTy-Sz-jnl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="bYW-Cb-zWj" id="m4j-J3-4xN"/>
-                        <outlet property="pageView" destination="qc8-rY-lXO" id="QUz-KG-3hn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
