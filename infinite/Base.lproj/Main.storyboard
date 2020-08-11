@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bYW-Cb-zWj">
-                                <rect key="frame" x="0.0" y="44" width="414" height="207"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bYW-Cb-zWj">
+                                <rect key="frame" x="0.0" y="94" width="414" height="207"/>
                                 <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="207" id="rvX-U1-noK"/>
@@ -40,17 +40,28 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="yka-sl-noK">
+                                <rect key="frame" x="161" y="269" width="92" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="2WG-6Q-dso"/>
+                                    <constraint firstAttribute="width" constant="92" id="Vei-pS-ghT"/>
+                                </constraints>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="bYW-Cb-zWj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3OX-Hf-55j"/>
+                            <constraint firstItem="bYW-Cb-zWj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="3OX-Hf-55j"/>
                             <constraint firstItem="bYW-Cb-zWj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4x5-27-Zsu"/>
+                            <constraint firstItem="yka-sl-noK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="161" id="BDr-kC-biF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bYW-Cb-zWj" secondAttribute="trailing" id="Rjs-ox-yhX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yka-sl-noK" secondAttribute="trailing" constant="161" id="TCN-kI-L7t"/>
+                            <constraint firstItem="yka-sl-noK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="225" id="z3x-Lf-xfE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="bYW-Cb-zWj" id="m4j-J3-4xN"/>
+                        <outlet property="pageView" destination="yka-sl-noK" id="aqQ-Ud-vVc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,14 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // let displayText = ["1", "2", "3", "1", "2", "3"]
-    
     let imageCollection: [UIImage] = [#imageLiteral(resourceName: "1"), #imageLiteral(resourceName: "2"), #imageLiteral(resourceName: "3")]
     private var numberOfItem: Int = 1000
+    var currentX: CGFloat = 0.0
     
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    @IBOutlet weak var pageView: UIPageControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +30,40 @@ class ViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        pageView.numberOfPages = imageCollection.count
+        pageView.currentPage = 0
+        pageView.currentPageIndicatorTintColor = .black
+        pageView.pageIndicatorTintColor = .lightGray
+        
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if currentX > scrollView.contentOffset.x {
+            let pageToJump = floor((currentX - scrollView.contentOffset.x) / collectionView.frame.width)
+            if pageToJump == 0 {return}
+            else {
+                currentX -= pageToJump * collectionView.frame.width
+            }
+            
+            let dif = pageView.currentPage - Int(pageToJump)
+            if dif > 0 {
+                pageView.currentPage = dif
+            }else if dif < 0 {
+                pageView.currentPage = imageCollection.count + dif
+            }else {
+                pageView.currentPage = 0
+            }
+        }else if currentX < scrollView.contentOffset.x {
+            let pageToJump = floor((scrollView.contentOffset.x - currentX) / collectionView.frame.width)
+            if pageToJump == 0 {return}
+            else {
+                currentX += pageToJump * collectionView.frame.width
+            }
+            pageView.currentPage = (pageView.currentPage + Int(pageToJump)) % imageCollection.count
+        }
+    }
+    
     
 }
 
@@ -47,8 +79,8 @@ extension ViewController: UICollectionViewDelegate {
 extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageCollection.count * 4
-        // return numberOfItem
+        //        return imageCollection.count * 4
+        return numberOfItem
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,7 +88,6 @@ extension ViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
         
         cell.configure(with: imageCollection[indexPath.row % imageCollection.count])
-        
         return cell
     }
     
